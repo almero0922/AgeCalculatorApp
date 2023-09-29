@@ -1,0 +1,89 @@
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --lightRed: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --offWhite: hsl(0, 0%, 94%);
+  --lightGrey: hsl(0, 0%, 86%);
+  --mokeyGrey: hsl(0, 1%, 44%);
+  --offBlack: hsl(0, 0%, 8%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: var(--lightGrey);
+}
+.container-main{
+    width: 375px;
+    height: 34rem;
+    background-color: var(--white);
+    margin-top: 8rem;
+    border-radius: 20px 20px 120px 20px;
+    padding: 3.4rem 1.4rem;
+}
+.container-inputs{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2.8rem;
+}
+
+.container-age-input p{
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--mokeyGrey);
+    margin-bottom: 4px;
+}
+.age-input{
+    width: 88%;
+    height: 50px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid var(--lightGrey);
+}
+.container-ca{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ca-submit-style{
+    display: block;
+    height: 80px;
+    width: 200px;
+    background-image: url('./assets/images/icon-arrow.svg');
+    background-color: var(--purple);
+    background-repeat: no-repeat;
+    background-image: contain;
+    background-position: center;
+    border-radius: 50%;
+    background-size: 2rem;
+}
+.ca-line{
+    display: block;
+    border-bottom: 2px solid var(--lightGrey);
+    width: 100%;
+}
+.container-displays{
+    display: flex;
+    flex-direction: column;
+}
+.age-display{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.age-display p{
+     font-size: 54px;
+     font-style: italic;
+     font-weight: 800;
+}
+.age-display p:nth-child(1){
+    color: var(--purple);
+}
