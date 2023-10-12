@@ -35,7 +35,7 @@ body{
     margin-bottom: 2.8rem;
 }
 
-.container-age-input p{
+.input-title{
     font-size: 12px;
     letter-spacing: 3px;
     color: var(--mokeyGrey);
@@ -47,6 +47,20 @@ body{
     border-radius: 8px;
     outline: none;
     border: 1px solid var(--lightGrey);
+    padding-left: 0.4rem;
+    font-size: 32px;
+    margin-bottom: 0.4rem;
+}
+.error-input{
+    border: 1px solid var(--lightRed);
+}
+.error-title{
+    color: var(--lightRed);
+}
+.error-text{
+    font-size: 9px;
+    color: var(--lightRed);
+    font-style: italic;
 }
 .container-ca{
     display: flex;
@@ -65,11 +79,17 @@ body{
     border-radius: 50%;
     background-size: 2rem;
 }
+.ca-submit-style:hover{
+    background-color: var(--offBlack);
+    cursor: pointer;
+    transition: background-color 500ms linear;
+}
 .ca-line{
     display: block;
     border-bottom: 2px solid var(--lightGrey);
     width: 100%;
 }
+
 .container-displays{
     display: flex;
     flex-direction: column;
@@ -86,4 +106,7 @@ body{
 }
 .age-display p:nth-child(1){
     color: var(--purple);
+}
+.display-none{
+    display: none;
 }
