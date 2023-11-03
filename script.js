@@ -2,21 +2,34 @@ const ca_submit = document.getElementById("ca-submit");
 const input_day = document.getElementById("input-day");
 const input_month = document.getElementById("input-month");
 const input_year = document.getElementById("input-year");
+const display_year = document.getElementById("years-display");
+const display_month = document.getElementById("months-display");
+const display_day = document.getElementById("days-display");
 
+
+var years = '';
+var months = '';
+var days = '';
 
 input_day.value = "";
 input_month.value = "";
 input_year.value = "";
 
 ca_submit.addEventListener('click', (e)=>{
-    var errors = checkInputValues();
+    //Check if Value Exist
+    var emptyValues = checkInputValues();
+    var validDates = checkValidDatesValues();
+    numberAnimation()
+
+
+    /*
     if(errors){
         displayInputErrors(errors);
         return false;
     }
     removeInputErrors();
-    
     alert(errors);
+    */
 })
 
 function checkInputValues(){
@@ -29,6 +42,29 @@ function checkInputValues(){
     }else{
         return false;
     }
+}
+
+function checkValidDatesValues(){
+    var date = input_year.value + '-' + input_month.value + '-' + input_day.value;
+    var currentBirthday = moment().year() + '-09-22';
+    var dateTime = moment.duration(moment().diff(date));
+    var dateMoment = moment(date);
+    if(moment().isAfter()){
+        console.log('Date is in the future');
+    }
+    console.log('Valid: ' + dateMoment.isValid());
+    console.log('invalidAt: ' + dateMoment.invalidAt());
+    /*
+    console.log('Years: ' + moment().diff(dateMoment, 'years', false));
+    console.log('Months: ' + moment().diff(currentBirthday, 'months', false));
+    console.log('Days: ' + moment().diff(currentBirthday, 'days', false));
+    */
+   console.log('Years: ' + dateTime.years());
+   console.log('Months: ' + dateTime.months());
+   console.log('Days: ' + dateTime.days());
+   years = dateTime.years();
+   months = dateTime.months();
+   days = dateTime.days();
 }
 
 function displayInputErrors(errors){
@@ -48,3 +84,12 @@ function removeInputErrors(){
     }
 
 }
+function numberAnimation(el, endValue, incrementor, duration) {
+    anime({
+      targets: el,
+      textContent: endValue,
+      round: incrementor ? 1/incrementor : 1/5,
+      easing: 'easeInOutQuad',
+      duration: duration ? duration : 4000,
+    });
+  }
